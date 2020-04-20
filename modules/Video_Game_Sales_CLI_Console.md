@@ -32,7 +32,7 @@ This module also shows how to use Amazon SageMaker's built-in algorithms via hos
 
 9.  We'll be using the AWS CLI and a Bash script to run the training job. Using the AWS CLI and scripts is an excellent way to automate machine learning pipelines and repetitive tasks, such as periodic training jobs. Any AWS CLI and Bash environment can be used for the running this script as long as it is set up properly. For this lab we'll use the AWS CLI and Bash environment that comes with SageMaker Notebook. This AWS CLI is already set up with the proper temporary credentials based on the IAM role assigned to the SageMaker notebook.
 
-10. Create a shellscript named `videogames.sh` in the SageMaker Notebook following these steps. in your notebook instance, click the **New** button on the right and select **Text File**.
+10. Create a shellscript named `videogames.sh` in the SageMaker Notebook following these steps. In your notebook instance, click the **New** button on the right and select **Text File**.
     ![New Text File](./images/videogames-new-text-file.png)
     
     A new file named untitled.txt will open.
@@ -45,7 +45,7 @@ This module also shows how to use Amazon SageMaker's built-in algorithms via hos
     
     ![Rename Shell Script](./images/videogames-rename-file-1.png) 
     
-    Enter `videogames.sh` as the file name in the pop up.
+    Enter `videogames.sh` as the file name in the pop up and click OK.
 
     ![Renamed Shell Script](./images/videogames-rename-file-2.png) 
     
@@ -123,6 +123,10 @@ chmod +x videogames.sh
 ```
 ./videogames.sh  
 ```
+
+ARN of the training job will be displayed on the terminal.
+
+![Shell Script](./images/videogames-run-shell-script.png)
 
 17. In the SageMaker console, click **Jobs** in the left panel to check the status of the training job.  When the job is complete, its **Status** column will change from InProgress to Complete.  As a reminder, duration of this job can last up to about 5 minutes, including time for setting up the training cluster.
 
