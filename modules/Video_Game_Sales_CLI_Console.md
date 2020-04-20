@@ -45,13 +45,15 @@ This module also shows how to use Amazon SageMaker's built-in algorithms via hos
     
     ![Rename Shell Script](./images/videogames-rename-file-1.png) 
     
+    Enter `videogames.sh` as the file name in the pop up.
+
     ![Renamed Shell Script](./images/videogames-rename-file-2.png) 
     
     At this point there will be a file named `videogames.sh` in the list of files. 
     
     ![File List](./images/videogames-list-shell-script.png)
 
-12.  Paste the bash script below into the `videogames.sh` file, and then change the text in the angle brackets (< >) as follows.  Do NOT put quotes around the values you insert, or retain the brackets.  
+12. Paste the bash script below into the `videogames.sh` file, and then change the text in the angle brackets (< >) as follows.  Do NOT put quotes around the values you insert, or retain the brackets.  
 
 - arn_role:  To get the value for this variable, go to the SageMaker console, click **Notebook instances** in the left pane, then in the 'Notebook instances' table, click the name of the instance you created for this workshop.  In the **Notebook instance settings** section, look for the 'IAM role ARN' value, and copy its text. It should look like the following:  `arn:aws:iam::1234567890:role/service-role/AmazonSageMaker-ExecutionRole-20171211T211964`.
 
@@ -94,17 +96,18 @@ sagemaker create-training-job \
 
 ```
 
-13.  Once the shell script is updated, it should look similar to the screenshot below. 
+13. Once the shell script is updated, it should look similar to the screenshot below.
     
     ![Shell Script](./images/videogames-shell-script.png)
 
-14.   To run the shellscript, we'll use the Terminal provided as part of the SageMaker Notebook. In your notebook instance, click the **New** button on the right and select **Terminal**.
+14. To run the shellscript, we'll use the Terminal provided as part of the SageMaker Notebook. In your notebook instance, click the **New** button on the right and select **Terminal**.
     
     ![New Terminal](./images/videogames-new-terminal.png)
     
     This terminal supports AWS CLI and Bash and can execute the `videogames.sh` script.
 
-15.  In the terminal window, change to the directory in which you created the file and run the commands. To do that, execute the commands in order.
+15. In the terminal window, change to the directory in which you created the file and run the commands. To do that, execute the commands in order.
+  
 ```
 cd SageMaker
 ```
@@ -115,13 +118,13 @@ cd videogame-sales-cli-console
 chmod +x videogames.sh
 ```
 
-16.   In your terminal window, run the following command to start the training job. Total job duration may last up to about 5 minutes, including time for setting up the training cluster. In case the training job encounters problems and is stuck, you can set a stopping condition that times out, in this case after a half hour. 
+16. In your terminal window, run the following command to start the training job. Total job duration may last up to about 5 minutes, including time for setting up the training cluster. In case the training job encounters problems and is stuck, you can set a stopping condition that times out, in this case after a half hour. 
 
 ```
 ./videogames.sh  
 ```
 
-17.  In the SageMaker console, click **Jobs** in the left panel to check the status of the training job.  When the job is complete, its **Status** column will change from InProgress to Complete.  As a reminder, duration of this job can last up to about 5 minutes, including time for setting up the training cluster.
+17. In the SageMaker console, click **Jobs** in the left panel to check the status of the training job.  When the job is complete, its **Status** column will change from InProgress to Complete.  As a reminder, duration of this job can last up to about 5 minutes, including time for setting up the training cluster.
 
 - To check the actual training time (not including cluster setup) for a job when it is complete, click the training job name in the jobs table, then examine the **Training time** listed at the top right under **Job Settings**.
 
@@ -145,7 +148,7 @@ chmod +x videogames.sh
 
 ![Model](./images/videogames-model-v1.png)
 
-19.    **Endpoint Configuration**:  Once we've setup our model, we can configure what our hosting endpoint should be. Here we specify the EC2 instance type to use for hosting, the initial number of instances, and our hosting model name.  Here are the steps to do this via the SageMaker console (see screenshot below for an example of all relevant fields filled in for the Oregon AWS Region):
+19. **Endpoint Configuration**:  Once we've setup our model, we can configure what our hosting endpoint should be. Here we specify the EC2 instance type to use for hosting, the initial number of instances, and our hosting model name.  Here are the steps to do this via the SageMaker console (see screenshot below for an example of all relevant fields filled in for the Oregon AWS Region):
 
 - In the left pane of the SageMaker console, click **Endpoint configuration**.  Click the **Create endpoint configuration** button at the upper right above the 'Endpoint configuration' table.
 
@@ -155,7 +158,7 @@ chmod +x videogames.sh
 
 ![Endpoint Configuration](./images/videogames-endpoint-config-v1.png)
 
-20.    **Endpoint Creation**:  Now that we've specified how our endpoint should be configured, we can create it.  For this final step in the process of settng up an endpoint, we'll once again use the SageMaker console to do so (see screenshot below for an example of all relevant fields filled in for the Oregon AWS Region):
+20. **Endpoint Creation**:  Now that we've specified how our endpoint should be configured, we can create it.  For this final step in the process of settng up an endpoint, we'll once again use the SageMaker console to do so (see screenshot below for an example of all relevant fields filled in for the Oregon AWS Region):
 
 - In the left pane of the SageMaker console, click **Endpoints**.  Click the **Create endpoint** button at the upper right above the 'Endpoints' table.
 
@@ -167,7 +170,7 @@ chmod +x videogames.sh
 
 ![Endpoint](./images/videogames-endpoint-v1.png)
 
-21.    **Evaluate**:  To evaluate predictions from our model, we'll use the notebook uploaded to your Amazon SageMaker notebook instance in steps 1 to 5.  (NOTE:  IF YOU DID NOT PERFORM STEPS 1 TO 5 EARLIER, DO SO NOW.)  Next:
+21. **Evaluate**:  To evaluate predictions from our model, we'll use the notebook uploaded to your Amazon SageMaker notebook instance in steps 1 to 5.  (NOTE:  IF YOU DID NOT PERFORM STEPS 1 TO 5 EARLIER, DO SO NOW.)  Next:
 
     [a]  Run the first two cells of the notebook if you haven't done so already, in order to make sure you have imported the required libraries.
     
