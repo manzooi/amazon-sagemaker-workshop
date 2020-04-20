@@ -32,9 +32,24 @@ This module also shows how to use Amazon SageMaker's built-in algorithms via hos
 
 9.  We'll be using the AWS CLI and a Bash script to run the training job. Using the AWS CLI and scripts is an excellent way to automate machine learning pipelines and repetitive tasks, such as periodic training jobs. Any AWS CLI and Bash environment can be used for the running this script as long as it is set up properly. For this lab we'll use the AWS CLI and Bash environment that comes with SageMaker Notebook. This AWS CLI is already set up with the proper temporary credentials based on the IAM role assigned to the SageMaker notebook.
 
-10. Create a shellscript named `videogames.sh` in the SageMaker Notebook following these steps. Click on New -> Text File. ![New Text File](./images/videogames-new-text-file.png) A new file named untitled.txt will open. ![Untitled File](./images/videogames-untitled-file.png)
+10. Create a shellscript named `videogames.sh` in the SageMaker Notebook following these steps. in your notebook instance, click the **New** button on the right and select **Text File**.
+    ![New Text File](./images/videogames-new-text-file.png)
+    
+    A new file named untitled.txt will open.
+    
+    ![Untitled File](./images/videogames-untitled-file.png)
 
-11. Rename the untitled.txt into `videogames.sh`. Click on File -> Rename. ![Rename Shell Script](./images/videogames-rename-file-1.png) ![Renamed Shell Script](./images/videogames-rename-file-2.png) At this point there will be a file named `videogames.sh` in the list of files. ![File List](./images/videogames-list-shell-script.png)
+11. Rename the untitled.txt into `videogames.sh`. 
+    
+    Click on top menu of the file **File** and select **Rename**. 
+    
+    ![Rename Shell Script](./images/videogames-rename-file-1.png) 
+    
+    ![Renamed Shell Script](./images/videogames-rename-file-2.png) 
+    
+    At this point there will be a file named `videogames.sh` in the list of files. 
+    
+    ![File List](./images/videogames-list-shell-script.png)
 
 12.  Paste the bash script below into the `videogames.sh` file, and then change the text in the angle brackets (< >) as follows.  Do NOT put quotes around the values you insert, or retain the brackets.  
 
@@ -79,11 +94,17 @@ sagemaker create-training-job \
 
 ```
 
-13.  Once the shell script is updated, it should look similar to the screenshot below. ![Shell Script](./images/videogames-shell-script.png)
+13.  Once the shell script is updated, it should look similar to the screenshot below. 
+    
+    ![Shell Script](./images/videogames-shell-script.png)
 
-14.  To run the shellscript, we'll use the Terminal provided as part of the SageMaker Notebook. Click on New -> Terminal. ![New Terminal](./images/videogames-new-terminal.png). This terminal supports AWS CLI and Bash and can execute the `videogames.sh` script.
+14.   To run the shellscript, we'll use the Terminal provided as part of the SageMaker Notebook. In your notebook instance, click the **New** button on the right and select **Terminal**.
+    
+    ![New Terminal](./images/videogames-new-terminal.png)
+    
+    This terminal supports AWS CLI and Bash and can execute the `videogames.sh` script.
 
-15. In the terminal window, change to the directory in which you created the file and run the commands. To do that execute the commands in order.
+15.  In the terminal window, change to the directory in which you created the file and run the commands. To do that, execute the commands in order.
 ```
 cd SageMaker
 ```
@@ -94,17 +115,17 @@ cd videogame-sales-cli-console
 chmod +x videogames.sh
 ```
 
-16.  In your terminal window, run the following command to start the training job. Total job duration may last up to about 5 minutes, including time for setting up the training cluster. In case the training job encounters problems and is stuck, you can set a stopping condition that times out, in this case after a half hour. 
+16.   In your terminal window, run the following command to start the training job. Total job duration may last up to about 5 minutes, including time for setting up the training cluster. In case the training job encounters problems and is stuck, you can set a stopping condition that times out, in this case after a half hour. 
 
 ```
 ./videogames.sh  
 ```
 
-17. In the SageMaker console, click **Jobs** in the left panel to check the status of the training job.  When the job is complete, its **Status** column will change from InProgress to Complete.  As a reminder, duration of this job can last up to about 5 minutes, including time for setting up the training cluster.
+17.  In the SageMaker console, click **Jobs** in the left panel to check the status of the training job.  When the job is complete, its **Status** column will change from InProgress to Complete.  As a reminder, duration of this job can last up to about 5 minutes, including time for setting up the training cluster.
 
 - To check the actual training time (not including cluster setup) for a job when it is complete, click the training job name in the jobs table, then examine the **Training time** listed at the top right under **Job Settings**.
 
-18    **SageMaker Model Creation**:  Now that we've trained our machine learning model, we'll want to make predictions by setting up a hosted endpoint for it. The first step in doing that is to create a SageMaker model object that wraps the actual model artifact from training. To create the model object, we will point to the model.tar.gz that came from training and the inference code container, then create the hosting model object.  Here are the steps to do this via the SageMaker console (see screenshot below for an example of all relevant fields filled in for the Oregon AWS Region):
+18. **SageMaker Model Creation**:  Now that we've trained our machine learning model, we'll want to make predictions by setting up a hosted endpoint for it. The first step in doing that is to create a SageMaker model object that wraps the actual model artifact from training. To create the model object, we will point to the model.tar.gz that came from training and the inference code container, then create the hosting model object.  Here are the steps to do this via the SageMaker console (see screenshot below for an example of all relevant fields filled in for the Oregon AWS Region):
 
 - In the left pane of the SageMaker console home page, right click the **Models** link and open it in another tab of your browser.  Click the **Create Model** button at the upper right above the 'Models' table.
 
