@@ -128,7 +128,7 @@ ARN of the training job will be displayed on the terminal.
 
 ![Shell Script](./images/videogames-run-shell-script.png)
 
-17. In the SageMaker console, click **Jobs** in the left panel to check the status of the training job.  When the job is complete, its **Status** column will change from InProgress to Complete.  As a reminder, duration of this job can last up to about 5 minutes, including time for setting up the training cluster.
+17. In the SageMaker console, click **Training jobs** in the left panel to check the status of the training job.  When the job is complete, its **Status** column will change from InProgress to Complete.  As a reminder, duration of this job can last up to about 5 minutes, including time for setting up the training cluster.
 
 - To check the actual training time (not including cluster setup) for a job when it is complete, click the training job name in the jobs table, then examine the **Training time** listed at the top right under **Job Settings**.
 
@@ -146,7 +146,7 @@ ARN of the training job will be displayed on the terminal.
   - Ireland:  685385470294.dkr.ecr.eu-west-1.amazonaws.com/xgboost:latest
   - Sydney:  544295431143.dkr.ecr.ap-southeast-2.amazonaws.com/xgboost:latest
    
-- For the 'Location of model artifacts' field under **Primary Container**, enter the path to the output of your training job.  To find the path, go back to your first browser tab, click **Jobs** in the left pane, then find and click the job name, which will look like `videogames-xgboost-<date>`.  Scroll down to the **Outputs** section, then copy the path under 'S3 model artifact'.  Paste the path in the field; it should look like `s3://smworkshop-john-smith/sagemaker/videogames_xgboost/videogames-xgboost-2018-04-17-20-40-13/output/model.tar.gz `.  
+- For the 'Location of model artifacts' field under **Container definition 1**, enter the path to the output of your training job.  To find the path, go back to your first browser tab, click **Training jobs** in the left pane, then find and click the job name, which will look like `videogames-xgboost-<date>`.  Scroll down to the **Outputs** section, then copy the path under 'S3 model artifact'.  Paste the path in the field; it should look like `s3://smworkshop-john-smith/sagemaker/videogames_xgboost/videogames-xgboost-2018-04-17-20-40-13/output/model.tar.gz `.  
 
 - Click **Create model** at the bottom of the page.
 
